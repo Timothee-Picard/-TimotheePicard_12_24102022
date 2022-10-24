@@ -61,68 +61,87 @@ export default function Profil() {
 
   return (
     <>
-      <p className="hello">Bonjour <span>{user.userInfos.firstName}</span></p>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-
-        <p>Calories {user.keyData.calorieCount}</p>
-        <p>Proteines {user.keyData.proteinCount}</p>
-        <p>Lipides {user.keyData.lipidCount}</p>
-        <p>Glucides {user.keyData.carbohydrateCount}</p>
-
-      <BarChart
-          width={800}
-          height={250}
-          data={activity}
-      >
-        <CartesianGrid strokeDasharray="10" />
-        <XAxis dataKey="" />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#282D30" />
-        <Bar dataKey="calories" fill="#E60000" />
-      </BarChart>
-
-
-
-
-        <LineChart
-            width={500}
-            height={300}
-            data={averageSessions}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
-        </LineChart>
-
-
-
-        <RadarChart width={500}
-                    height={500}
-                    cx={250}
-                    cy={250}
-                    outerRadius={150}
-                    data={performance.data}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="kind" />
-            <PolarRadiusAxis />
-            <Radar name="Mike"
-                   dataKey="value"
-                   stroke="#8884d8"
-                   fill="#8884d8"
-                   fillOpacity={0.6} />
-        </RadarChart>
-
-
+        <p className="hello">Bonjour <span>{user.userInfos.firstName}</span></p>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <div className="profil-container">
+            <div className="profil-container-main">
+                <div className="profil-container-main-bar">
+                    <div className="profil-container-main-bar-title">
+                        <h3>Activité quotidienne</h3>
+                        <div className="profil-container-main-bar-title-legend">
+                            <span>Poids (kg)</span>
+                            <span>Calories brûlées (kCal)</span>
+                        </div>
+                    </div>
+                    <div className="profil-container-main-bar-diagramme">
+                        <ResponsiveContainer>
+                            <BarChart data={activity}>
+                                <CartesianGrid
+                                    strokeDasharray="5" 
+                                    vertical={false} />
+                                <Tooltip />
+                                <Bar barSize={10} dataKey="kilogram" fill="#282D30" />
+                                <Bar barSize={10} dataKey="calories" fill="#E60000" />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
+                <div className="profil-container-main-line">
+                    <ResponsiveContainer>
+                        <LineChart data={averageSessions}>
+                            <XAxis dataKey="day" tick={{stroke: 'white'}} tickLine={false} axisLine={false} />
+                            <Tooltip />
+                            <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
+                        </LineChart>
+                    </ResponsiveContainer>
+                </div>
+                <div className="profil-container-main-radar">
+                    <ResponsiveContainer>
+                        <RadarChart data={performance.data}>
+                            <PolarGrid />
+                            <PolarAngleAxis dataKey="kind" />
+                            <Radar dataKey="value"
+                                stroke="#FF0101B2"
+                                fill="#FF0101B2"
+                                fillOpacity={0.7} />
+                        </RadarChart>
+                    </ResponsiveContainer>
+                </div>
+                <div className="profil-container-main-score">
+                    AAAAAAAAAAAAAAAA
+                </div>
+            </div>
+            <div className="profil-container-aside">
+                <div className="profil-container-aside-stats">
+                    <i>1</i>
+                    <span>
+                        {user.keyData.calorieCount}kCal
+                        <p>Calories</p>
+                    </span>
+                </div>
+                <div className="profil-container-aside-stats">
+                    <i>1</i>
+                    <span>
+                        {user.keyData.calorieCount}g
+                        <p>Proteines</p>
+                    </span>
+                </div>
+                <div className="profil-container-aside-stats">
+                    <i>1</i>
+                    <span>
+                        {user.keyData.lipidCount}g
+                        <p>Glucides</p>
+                    </span>
+                </div>
+                <div className="profil-container-aside-stats">
+                    <i>1</i>
+                    <span>
+                        {user.keyData.carbohydrateCount}g
+                        <p>Lipides</p>
+                    </span>
+                </div>
+            </div>
+        </div>
     </>
   )
 }
