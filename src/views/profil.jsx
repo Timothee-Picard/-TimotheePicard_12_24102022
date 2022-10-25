@@ -1,18 +1,10 @@
 import {useEffect, useState} from "react";
-import {
-    BarChart,
-    Bar,
-    Cell,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer,
-    PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, Line, LineChart
-} from 'recharts';
 import { getUser, getActivity, getPerformance, getAverageSessions } from "../service/data.js";
 import {useParams} from "react-router-dom";
+import Bar_chart from "../components/charts/bar_chart.jsx";
+import Line_chart from "../components/charts/line_chart";
+import Radar_chart from "../components/charts/radar_chart";
+import Pie_chart from "../components/charts/pie_chart";
 
 export default function Profil() {
     const [user, setUser] = useState({userInfos: {age: null, firstname: null, lastname: null},todayScore:0, keyData:{calorieCount:0, proteinCount:0, carbohydrateCount:0, lipidCount:0}})
@@ -57,7 +49,10 @@ export default function Profil() {
         };
         getPerformanceData();
     });
-
+    const pieData = [
+        { name: "completed", value: 0.15, fillColor: `red` },
+        { name: "not-completed", value: 1 - 0.15, fillColor: "transparent" },
+    ];
 
   return (
     <>
@@ -74,41 +69,17 @@ export default function Profil() {
                         </div>
                     </div>
                     <div className="profil-container-main-bar-diagramme">
-                        <ResponsiveContainer>
-                            <BarChart data={activity}>
-                                <CartesianGrid
-                                    strokeDasharray="5" 
-                                    vertical={false} />
-                                <Tooltip />
-                                <Bar barSize={10} dataKey="kilogram" fill="#282D30" />
-                                <Bar barSize={10} dataKey="calories" fill="#E60000" />
-                            </BarChart>
-                        </ResponsiveContainer>
+                        <Bar_chart data={activity} />
                     </div>
                 </div>
                 <div className="profil-container-main-line">
-                    <ResponsiveContainer>
-                        <LineChart data={averageSessions}>
-                            <XAxis dataKey="day" tick={{stroke: 'white'}} tickLine={false} axisLine={false} />
-                            <Tooltip />
-                            <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
-                        </LineChart>
-                    </ResponsiveContainer>
+                    <Line_chart data={averageSessions} />
                 </div>
                 <div className="profil-container-main-radar">
-                    <ResponsiveContainer>
-                        <RadarChart data={performance.data}>
-                            <PolarGrid />
-                            <PolarAngleAxis dataKey="kind" />
-                            <Radar dataKey="value"
-                                stroke="#FF0101B2"
-                                fill="#FF0101B2"
-                                fillOpacity={0.7} />
-                        </RadarChart>
-                    </ResponsiveContainer>
+                    <Radar_chart data={performance.data} />
                 </div>
                 <div className="profil-container-main-score">
-                    AAAAAAAAAAAAAAAA
+                    <Pie_chart data={pieData} />
                 </div>
             </div>
             <div className="profil-container-aside">
