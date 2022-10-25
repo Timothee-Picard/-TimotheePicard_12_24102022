@@ -50,8 +50,8 @@ export default function Profil() {
         getPerformanceData();
     });
     const pieData = [
-        { name: "completed", value: 0.15, fillColor: `red` },
-        { name: "not-completed", value: 1 - 0.15, fillColor: "transparent" },
+        { name: "done", value: 0.15, fillColor: `red` },
+        { name: "todo", value: 1 - 0.15, fillColor: "transparent" },
     ];
 
   return (
