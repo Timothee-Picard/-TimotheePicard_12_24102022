@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
-import Layout from "./components/layout.jsx";
-import Home from "./views/home.jsx";
-import Profil from "./views/profil.jsx";
-import Error from "./views/error.jsx";
+import Layout from "./components/layout/layout.jsx";
+import Home from "./views/home/home.jsx";
+import Profil from "./views/profil/profil.jsx";
+import Error from "./views/error/error.jsx";
 
 import './index.scss'
 

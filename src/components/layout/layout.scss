@@ -1,0 +1,46 @@
+header {
+  flex: 0;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+  }
+}
+header, .mainContainer>aside {
+  background-color: var(--bgBlack);
+  color: white;
+}
+.mainContainer {
+  display: flex;
+  flex: 1;
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 25px;
+    p {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
