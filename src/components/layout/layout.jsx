@@ -19,27 +19,29 @@ export default function Layout() {
             <nav>
                 <Link className={`${pathname === '/' ? "active" : ""}`} to='/'>Accueil</Link>
                 <Link className={`${pathname === '/a-propos' ? "active" : ""}`} to='/profil/18'>Profil</Link>
-                <a href="src/components/layout/layout.jsx#">Réglage</a>
-                <a href="src/components/layout/layout.jsx#">Communauté</a>
+                <a href="#">Réglage</a>
+                <a href="#">Communauté</a>
             </nav>
         </header>
         <div className="mainContainer">
             <aside>
-                <nav>
-                    <a href="src/components/layout/layout.jsx#">
-                        <img src={icoMeditate} alt="logo" />
-                    </a>
-                    <a href="src/components/layout/layout.jsx#">
-                        <img src={icoSwimming} alt="logo" />
-                    </a>
-                    <a href="src/components/layout/layout.jsx#">
-                        <img src={icoBike} alt="logo" />
-                    </a>
-                    <a href="src/components/layout/layout.jsx#">
-                        <img src={icoDumbbells} alt="logo" />
-                    </a>
-                </nav>
-                <p>Copiryght, SportSee 2020</p>
+                <div className="content">
+                    <nav>
+                        <a href="#">
+                            <img src={icoMeditate} alt="logo" />
+                        </a>
+                        <a href="#">
+                            <img src={icoSwimming} alt="logo" />
+                        </a>
+                        <a href="#">
+                            <img src={icoBike} alt="logo" />
+                        </a>
+                        <a href="#">
+                            <img src={icoDumbbells} alt="logo" />
+                        </a>
+                    </nav>
+                    <p>Copiryght, SportSee 2020</p>
+                </div>
             </aside>
             <main>
                 <Outlet />

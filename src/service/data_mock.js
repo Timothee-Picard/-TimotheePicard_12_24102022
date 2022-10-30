@@ -7,7 +7,7 @@ import axios from "axios";
  */
 export const getUser = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}`)
+        const response = await axios.get("./../../mookedDatas/user.json")
         return response.data.data
     } catch (error) {
         console.error(error)
@@ -21,7 +21,7 @@ export const getUser = async (id) => {
  */
 export const getActivity = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}/activity`)
+        const response = await axios.get("./../../mookedDatas/activity.json")
         return response.data.data.sessions
     } catch (error) {
         console.error(error)
@@ -35,7 +35,7 @@ export const getActivity = async (id) => {
  */
 export const getPerformance = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}/performance`)
+        const response = await axios.get("./../../mookedDatas/performance.json")
         return response.data.data
     } catch (error) {
         console.error(error)
@@ -49,7 +49,7 @@ export const getPerformance = async (id) => {
  */
 export const getAverageSessions = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}/average-sessions`)
+        const response = await axios.get("./../../mookedDatas/averageSessions.json")
         return response.data.data.sessions
     } catch (error) {
         console.error(error)

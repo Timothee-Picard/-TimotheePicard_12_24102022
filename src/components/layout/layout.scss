@@ -21,22 +21,27 @@ header, .mainContainer>aside {
   display: flex;
   flex: 1;
   aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-width: 65px;
     padding: 50px 25px;
-    p {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 12px;
-      font-weight: 500;
-    }
-    nav {
-      flex: 1;
+    .content {
+      position: fixed;
+      height: calc(100vh - 210px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 20px;
+      align-items: center;
+      p {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: 12px;
+        font-weight: 500;
+      }
+      nav {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
     }
   }
 }
