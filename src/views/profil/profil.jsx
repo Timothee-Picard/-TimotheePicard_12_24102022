@@ -17,12 +17,8 @@ import { getUser, getActivity, getPerformance, getAverageSessions } from "../../
 
 import { User } from "../../constructor/user";
 import { Activity } from "../../constructor/activity";
+import {Performance} from "../../constructor/performance.js";
 
-
-/**
- * 
- * @returns 
- */
 export default function Profil() {
     const [user, setUser] = useState(new User)
     const [activity, setActivity] = useState([])
@@ -45,8 +41,8 @@ export default function Profil() {
         const getActivityData = async () => {
             const request = await getActivity(userId);
             if (!request) return this.props.history.push('/404');
+            // new Activity(request)
             setActivity(request);
-            // console.log(activity);
         };
         getActivityData();
     });
@@ -64,7 +60,7 @@ export default function Profil() {
         const getPerformanceData = async () => {
             const request = await getPerformance(userId);
             if (!request) return this.props.history.push('/404');
-            setPerformance(request);
+            setPerformance(new Performance(request));
         };
         getPerformanceData();
     });
@@ -78,8 +74,8 @@ export default function Profil() {
                     <div className="profil-container-main-bar-title">
                         <h3>Activité quotidienne</h3>
                         <div className="profil-container-main-bar-title-legend">
-                            <span>Poids (kg)</span>
-                            <span>Calories brûlées (kCal)</span>
+                            <span className="profil-container-main-bar-title-legend-weight">Poids (kg)</span>
+                            <span className="profil-container-main-bar-title-legend-calories">Calories brûlées (kCal)</span>
                         </div>
                     </div>
                     <div className="profil-container-main-bar-diagramme">
@@ -87,13 +83,22 @@ export default function Profil() {
                     </div>
                 </div>
                 <div className="profil-container-main-line">
-                    <Line_chart data={averageSessions} />
+                    <h3>Durée moyenne des sessions</h3>
+
+                    <div className="profil-container-main-line-diagramme">
+                        <Line_chart data={averageSessions} />
+                    </div>
                 </div>
                 <div className="profil-container-main-radar">
-                    <Radar_chart data={performance} />
+                    <div className="profil-container-main-radar-diagramme">
+                        <Radar_chart data={performance} />
+                    </div>
                 </div>
                 <div className="profil-container-main-score">
-                    <Pie_chart data={user.todayScore? user.todayScore : user.score} />
+                    <h3>Score</h3>
+                    <div className="profil-container-main-score-diagramme">
+                        <Pie_chart data={user.todayScore? user.todayScore : user.score} />
+                    </div>
                 </div>
             </div>
             <div className="profil-container-aside">

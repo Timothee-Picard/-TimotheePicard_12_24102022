@@ -1,7 +1,7 @@
 import axios from "axios";
 
 /**
- * 
+ * Retrieve mooked user information
  * @param {string} id 
  * @returns {Object} 
  */
@@ -15,7 +15,7 @@ export const getUser = async (id) => {
 }
 
 /**
- * 
+ * Retrieve mooked activity data
  * @param {string} id 
  * @returns {object}
  */
@@ -29,7 +29,7 @@ export const getActivity = async (id) => {
 }
 
 /**
- * 
+ * Retrieve mooked user performance data
  * @param {string} id 
  * @returns {object}
  */
@@ -43,7 +43,7 @@ export const getPerformance = async (id) => {
 }
 
 /**
- * 
+ * Retrieve mooked user average sessions data
  * @param {string} id 
  * @returns {object}
  */

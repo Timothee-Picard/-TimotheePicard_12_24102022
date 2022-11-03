@@ -1,5 +1,6 @@
 import {Cell, Label, Pie, PieChart, ResponsiveContainer} from "recharts";
 import PropTypes from 'prop-types';
+import "./pie_chart.scss"
 
 export default function Pie_chart({data}) {
     const colorCircle = [
@@ -26,12 +27,12 @@ export default function Pie_chart({data}) {
                                 cornerRadius="50%"
                             />
                         ))}
-                        <Label className="circle-label" fill={"black"} width={70} position="center">
-                            { `${colorCircle[0].value * 100}% de votre objectif` }
-                        </Label>
                     </Pie>
                 </PieChart>
             </ResponsiveContainer>
+            <div className="circle-label" fill={"black"} width={70} position="center">
+                <span>{colorCircle[0].value * 100}%</span> de votre objectif
+            </div>
         </>
     )
 }
