@@ -32,7 +32,7 @@ Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser
 ### 3 - Launch
 - In the project directory, you can run: `npm run dev` or `yarn dev`
 
-### 3 - Possible endpoints
+### 4 - Possible endpoints
 
 This project includes four endpoints that you will be able to use:
 

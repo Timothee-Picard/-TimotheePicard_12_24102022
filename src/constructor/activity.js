@@ -1,7 +1,6 @@
 export class Activity {
     constructor(data) {
-        console.log(data)
-        this.day
+        this.day = 2
         // this.userInfos ={}
         // if(data && data.userInfos && data.userInfos.firstName) this.userInfos.firstName = data.userInfos.firstName
         // else this.userInfos.firstName = ""

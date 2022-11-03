@@ -1,4 +1,6 @@
 import "./bar_chart_tooltip.scss"
+import PropTypes from 'prop-types';
+
 export default function Bar_chart_tooltip({active, payload}) {
     if(!active) return null
     return (
@@ -9,4 +11,10 @@ export default function Bar_chart_tooltip({active, payload}) {
             </div>
         </>
     )
+}
+
+
+Bar_chart_tooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
 }

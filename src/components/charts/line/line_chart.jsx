@@ -8,11 +8,18 @@ export default function Line_chart({data}) {
     })
     return (
         <>
-            <ResponsiveContainer>
+            {/* <ResponsiveContainer>
                 <LineChart data={data}>
                     <XAxis dataKey="xAxe" tick={{stroke: 'white'}} tickLine={false} axisLine={false} height={40}/>
                     <Tooltip />
                     <Line type="basis" dataKey="sessionLength" stroke="white"/>
+                </LineChart>
+            </ResponsiveContainer> */}
+            <ResponsiveContainer>
+                <LineChart data={data}>
+                    <XAxis dataKey="xAxe" tick={{stroke: 'white'}} tickLine={false} axisLine={false} />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
         </>

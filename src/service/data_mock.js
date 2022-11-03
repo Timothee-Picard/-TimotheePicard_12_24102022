@@ -7,8 +7,26 @@ import axios from "axios";
  */
 export const getUser = async (id) => {
     try {
-        const response = await axios.get("./../../mookedDatas/user.json")
-        return response.data.data
+        const response = await new Promise((resolve, reject) => {
+            resolve({
+                data: {
+                    id: 12,
+                    userInfos: {
+                        firstName: "Karlos",
+                        lastName: "Dovineau",
+                        age: 31
+                    },
+                    todayScore: 0.12,
+                    keyData: {
+                        calorieCount: 1930,
+                        proteinCount: 155,
+                        carbohydrateCount: 290,
+                        lipidCount: 50
+                    }
+                }
+            })
+        })
+        return response.data
     } catch (error) {
         console.error(error)
     }

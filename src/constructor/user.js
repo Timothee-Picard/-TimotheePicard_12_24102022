@@ -1,3 +1,6 @@
+/**
+ * TODO:
+ */
 export class User {
     constructor(data) {
         if (data && data.id) this.id = data.id

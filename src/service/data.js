@@ -1,7 +1,6 @@
 import axios from "axios";
 
 /**
- *
  * Retrieve user information
  * @param {string} id 
  * @returns {Object} 
@@ -12,6 +11,7 @@ export const getUser = async (id) => {
         return response.data.data
     } catch (error) {
         console.error(error)
+        alert(error.message)
     }
 }
 
@@ -26,6 +26,7 @@ export const getActivity = async (id) => {
         return response.data.data.sessions
     } catch (error) {
         console.error(error)
+        alert(error.message)
     }
 }
 
@@ -40,6 +41,7 @@ export const getPerformance = async (id) => {
         return response.data.data
     } catch (error) {
         console.error(error)
+        alert(error.message)
     }
 }
 
@@ -54,5 +56,6 @@ export const getAverageSessions = async (id) => {
         return response.data.data.sessions
     } catch (error) {
         console.error(error)
+        alert(error.message)
     }
 }
