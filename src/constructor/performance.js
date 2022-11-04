@@ -1,5 +1,5 @@
 /**
- * TODO:
+ * Format Performance data
  */
 export class Performance {
     constructor(data) {

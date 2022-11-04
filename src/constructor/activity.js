@@ -1,5 +1,5 @@
 /**
- * TODO:
+ * Format Activity data
  */
 export class Activity {
     constructor(data) {

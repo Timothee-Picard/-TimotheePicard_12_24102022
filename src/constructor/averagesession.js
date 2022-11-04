@@ -1,5 +1,5 @@
 /**
- * TODO:
+ * Format AverageSessions data
  */
 export class AverageSessions {
     constructor(data) {

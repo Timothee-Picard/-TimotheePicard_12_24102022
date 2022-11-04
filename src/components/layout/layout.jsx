@@ -11,7 +11,7 @@ import icoDumbbells from "../../assets/icon-dumbbell.svg"
 import "./layout.scss"
 
 /**
- * TODO:
+ * Display layout contain all pages
  */
 export default function Layout() {
     const pathname = useLocation().pathname

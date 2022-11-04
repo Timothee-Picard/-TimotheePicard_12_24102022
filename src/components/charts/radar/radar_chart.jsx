@@ -2,7 +2,7 @@ import {PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer} from 
 import PropTypes from 'prop-types';
 
 /**
- * TODO:
+ * Display radar chart
  */
 export default function Radar_chart({data}) {
     const trad = {

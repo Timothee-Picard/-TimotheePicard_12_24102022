@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import "./pie_chart.scss"
 
 /**
- * TODO:
+ * Display pie chart
  */
 export default function Pie_chart({data}) {
     const colorCircle = [

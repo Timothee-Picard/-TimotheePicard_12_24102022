@@ -1,5 +1,5 @@
 /**
- * TODO:
+ * Format User data
  */
 export class User {
     constructor(data) {

@@ -10,7 +10,7 @@ import { getUser, getActivity, getPerformance, getAverageSessions } from "./../s
 // import { getUser, getActivity, getPerformance, getAverageSessions } from "./../service/data.js";
 
 /**
- * TODO:
+ * Initialize states and set states with api response
  * @returns (User|Activity[]|Performance|AverageSessions[])[]
  */
 export default function useProfil() {

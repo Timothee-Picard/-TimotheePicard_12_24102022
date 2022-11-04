@@ -13,8 +13,8 @@ import icoProtein from "../../assets/icon-protein.svg"
 import useProfil from "../../hooks/hookProfil";
 
 /**
- * 
- * @returns TODO:
+ * Display profil page
+ * @returns
  */
 export default function Profil() {
     const [user, activity, performance, averageSessions] = useProfil()

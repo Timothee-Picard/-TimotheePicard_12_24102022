@@ -2,7 +2,7 @@ import {Line, LineChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import PropTypes from 'prop-types';
 
 /**
- * TODO:
+ * Display line chart
  */
 export default function Line_chart({data}) {
     const xAxe = ["L","M","M","J","V","S","D"]
@@ -11,18 +11,11 @@ export default function Line_chart({data}) {
     })
     return (
         <>
-            {/* <ResponsiveContainer>
-                <LineChart data={data}>
-                    <XAxis dataKey="xAxe" tick={{stroke: 'white'}} tickLine={false} axisLine={false} height={40}/>
-                    <Tooltip />
-                    <Line type="basis" dataKey="sessionLength" stroke="white"/>
-                </LineChart>
-            </ResponsiveContainer> */}
             <ResponsiveContainer>
                 <LineChart data={data}>
                     <XAxis dataKey="xAxe" tick={{stroke: 'white'}} tickLine={false} axisLine={false} />
                     <Tooltip />
-                    <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey="sessionLength" stroke="black" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
         </>
