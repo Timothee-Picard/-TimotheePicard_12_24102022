@@ -1,5 +1,6 @@
 import {Line, LineChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import PropTypes from 'prop-types';
+import Line_chart_tooltip from "./line_chart_tooltip";
 
 /**
  * Display line chart
@@ -14,8 +15,8 @@ export default function Line_chart({data}) {
             <ResponsiveContainer>
                 <LineChart data={data}>
                     <XAxis dataKey="xAxe" tick={{stroke: 'white'}} tickLine={false} axisLine={false} />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="sessionLength" stroke="black" activeDot={{ r: 8 }} />
+                    <Tooltip content={<Line_chart_tooltip />} />
+                    <Line type="monotone" dataKey="sessionLength" stroke="white" activeDot={{ r: 4 }} />
                 </LineChart>
             </ResponsiveContainer>
         </>

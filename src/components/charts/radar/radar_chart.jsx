@@ -20,7 +20,7 @@ export default function Radar_chart({data}) {
     return (
         <>
             <ResponsiveContainer>
-                <RadarChart data={data.data} margin={{right: 20,left:20}}>
+                <RadarChart data={data.data} margin={{top: 5, bottom: 5}} >
                     <PolarGrid />
                     <PolarAngleAxis dataKey="xAxe" stroke="white"/>
                     <Radar dataKey="value"

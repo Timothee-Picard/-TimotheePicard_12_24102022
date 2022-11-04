@@ -1,0 +1,17 @@
+.home-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 30px;
+  color: #282D30;
+  a {
+    &:hover {
+      color: #74798C;
+      text-decoration: underline;
+    }
+  }
+}

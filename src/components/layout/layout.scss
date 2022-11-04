@@ -23,6 +23,9 @@ header, .mainContainer>aside {
   aside {
     min-width: 65px;
     padding: 50px 25px;
+    @media only screen and (max-width: 1439px) {
+      display: none;
+    }
     .content {
       position: fixed;
       height: calc(100vh - 210px);

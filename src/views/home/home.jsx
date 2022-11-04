@@ -1,5 +1,5 @@
-import {useState} from "react";
-import axios from "axios";
+import {Link} from "react-router-dom";
+import "./home.scss"
 
 /**
  * Display home page
@@ -7,7 +7,10 @@ import axios from "axios";
 export default function Home() {
   return (
     <>
-      Hooome
+        <div className="home-links">
+            <Link to='/profil/12'>Profil 12</Link>
+            <Link to='/profil/18'>Profil 18</Link>
+        </div>
     </>
   )
 }
