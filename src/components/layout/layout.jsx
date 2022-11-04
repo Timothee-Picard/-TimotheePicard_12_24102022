@@ -10,6 +10,9 @@ import icoBike from "../../assets/icon-bike.svg"
 import icoDumbbells from "../../assets/icon-dumbbell.svg"
 import "./layout.scss"
 
+/**
+ * TODO:
+ */
 export default function Layout() {
     const pathname = useLocation().pathname
   return (

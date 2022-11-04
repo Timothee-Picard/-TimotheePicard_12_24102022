@@ -1,3 +1,6 @@
+/**
+ * TODO:
+ */
 export class Performance {
     constructor(data) {
         data && data.data ? this.data = data.data : this.data = [

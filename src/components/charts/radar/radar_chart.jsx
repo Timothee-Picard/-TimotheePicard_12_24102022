@@ -1,6 +1,9 @@
 import {PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer} from "recharts";
 import PropTypes from 'prop-types';
 
+/**
+ * TODO:
+ */
 export default function Radar_chart({data}) {
     const trad = {
         cardio: "Cardio",

@@ -1,6 +1,7 @@
 import { User } from "./../constructor/user";
 import { Activity } from "./../constructor/activity";
 import {Performance} from "./../constructor/performance.js";
+import {AverageSessions} from "../constructor/averagesession.js";
 
 import {useEffect, useState} from "react";
 import {useParams, useNavigate } from "react-router-dom";
@@ -9,14 +10,14 @@ import { getUser, getActivity, getPerformance, getAverageSessions } from "./../s
 // import { getUser, getActivity, getPerformance, getAverageSessions } from "./../service/data.js";
 
 /**
- * 
- * @returns TODO
+ * TODO:
+ * @returns (User|Activity[]|Performance|AverageSessions[])[]
  */
 export default function useProfil() {
     const [user, setUser] = useState(new User)
-    const [activity, setActivity] = useState([])
-    const [averageSessions, setAverageSessions] = useState([{"day":0,"sessionLength":0}])
+    const [activity, setActivity] = useState([new Activity()])
     const [performance, setPerformance] = useState(new Performance())
+    const [averageSessions, setAverageSessions] = useState([new AverageSessions()])
 
     let navigate = useNavigate()
 
@@ -34,23 +35,13 @@ export default function useProfil() {
         const getActivityData = async () => {
             const request = await getActivity(userId);
             if (!request) return this.props.history.push('/404');
-            let test = []
+            let requestFormatted = []
             request.map((e) => {
-                test.push(new Activity(e))
+                requestFormatted.push(new Activity(e))
             })
-            console.log(test);
-            setActivity(request);
+            setActivity(requestFormatted);
         };
         getActivityData();
-    }, []);
-
-    useEffect(() => {
-        const getAverageSessionsData = async () => {
-            const request = await getAverageSessions(userId);
-            if (!request) return this.props.history.push('/404');
-            setAverageSessions(request);
-        };
-        getAverageSessionsData();
     }, []);
 
     useEffect(() => {
@@ -62,7 +53,18 @@ export default function useProfil() {
         getPerformanceData();
     }, []);
 
-
+    useEffect(() => {
+        const getAverageSessionsData = async () => {
+            const request = await getAverageSessions(userId);
+            if (!request) return this.props.history.push('/404');
+            let requestFormatted = []
+            request.map((e) => {
+                requestFormatted.push(new AverageSessions(e))
+            })
+            setAverageSessions(requestFormatted);
+        };
+        getAverageSessionsData();
+    }, []);
 
     return [user, activity, performance, averageSessions]
 }

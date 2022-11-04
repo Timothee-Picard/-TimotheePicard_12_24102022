@@ -1,6 +1,9 @@
 import {Line, LineChart, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import PropTypes from 'prop-types';
 
+/**
+ * TODO:
+ */
 export default function Line_chart({data}) {
     const xAxe = ["L","M","M","J","V","S","D"]
     data && data.map(( e, i )=> {

@@ -2,6 +2,9 @@ import {Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis
 import Bar_chart_tooltip from "./bar_chart_tooltip.jsx";
 import PropTypes from 'prop-types';
 
+/**
+ * TODO:
+ */
 export default function Bar_chart({data}) {
     const xAxe = [1,2,3,4,5,6,7]
     data && data.map(( e, i )=> {

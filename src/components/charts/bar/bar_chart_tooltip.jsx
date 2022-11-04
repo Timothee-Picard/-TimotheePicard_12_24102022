@@ -1,6 +1,9 @@
 import "./bar_chart_tooltip.scss"
 import PropTypes from 'prop-types';
 
+/**
+ * TODO:
+ */
 export default function Bar_chart_tooltip({active, payload}) {
     if(!active) return null
     return (

@@ -2,6 +2,9 @@ import {Cell, Label, Pie, PieChart, ResponsiveContainer} from "recharts";
 import PropTypes from 'prop-types';
 import "./pie_chart.scss"
 
+/**
+ * TODO:
+ */
 export default function Pie_chart({data}) {
     const colorCircle = [
         { name: "done", value: data, fillColor: `red` },
